@@ -574,7 +574,8 @@
 <li><a href="#References">References</a></li></ul>
 <section>
 <h2><a name="Introduction"></a>Introduction</h2>
-<p>This document describes how to configure authentication for Hadoop in secure mode. When Hadoop is configured to run in secure mode, each Hadoop service and each user must be authenticated by Kerberos.</p>
+<p>In its default configuration, we expect you to make sure attackers don&#x2019;t have access to your Hadoop cluster by restricting all network access. If you want any restrictions on who can remotely access data or submit work, you MUST secure authentication and access for your Hadoop cluster as described in this document.</p>
+<p>When Hadoop is configured to run in secure mode, each Hadoop service and each user must be authenticated by Kerberos.</p>
 <p>Forward and reverse host lookup for all service hosts must be configured correctly to allow services to authenticate with each other. Host lookups may be configured using either DNS or <code>/etc/hosts</code> files. Working knowledge of Kerberos and DNS is recommended before attempting to configure Hadoop services in Secure Mode.</p>
 <p>Security features of Hadoop consist of <a href="#Authentication">Authentication</a>, <a href="./ServiceLevelAuth.html">Service Level Authorization</a>, <a href="./HttpAuthentication.html">Authentication for Web Consoles</a> and <a href="#Data_confidentiality">Data Confidentiality</a>.</p></section><section>
 <h2><a name="Authentication"></a>Authentication</h2><section>
