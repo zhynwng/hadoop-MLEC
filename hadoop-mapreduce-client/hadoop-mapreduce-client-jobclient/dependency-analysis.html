@@ -621,14 +621,6 @@
 <td>jar</td>
 <td>false</td></tr>
 <tr class="a">
-<td>org.apache.hadoop</td>
-<td>hadoop-logging</td>
-<td>3.4.0-SNAPSHOT</td>
-<td>test</td>
-<td>tests</td>
-<td>test-jar</td>
-<td>false</td></tr>
-<tr class="b">
 <td>org.apache.avro</td>
 <td>avro</td>
 <td>1.9.2</td>
@@ -636,7 +628,7 @@
 <td></td>
 <td>jar</td>
 <td>false</td></tr>
-<tr class="a">
+<tr class="b">
 <td>org.apache.hadoop</td>
 <td>hadoop-common</td>
 <td>3.4.0-SNAPSHOT</td>
@@ -644,7 +636,7 @@
 <td></td>
 <td>jar</td>
 <td>false</td></tr>
-<tr class="b">
+<tr class="a">
 <td>org.slf4j</td>
 <td>slf4j-api</td>
 <td>1.7.30</td>
@@ -652,7 +644,7 @@
 <td></td>
 <td>jar</td>
 <td>false</td></tr>
-<tr class="a">
+<tr class="b">
 <td>org.apache.hadoop</td>
 <td>hadoop-annotations</td>
 <td>3.4.0-SNAPSHOT</td>
@@ -660,7 +652,7 @@
 <td></td>
 <td>jar</td>
 <td>false</td></tr>
-<tr class="b">
+<tr class="a">
 <td>org.mockito</td>
 <td>mockito-core</td>
 <td>2.28.2</td>
@@ -668,7 +660,7 @@
 <td></td>
 <td>jar</td>
 <td>false</td></tr>
-<tr class="a">
+<tr class="b">
 <td>org.apache.hadoop</td>
 <td>hadoop-common</td>
 <td>3.4.0-SNAPSHOT</td>
@@ -676,7 +668,7 @@
 <td>tests</td>
 <td>test-jar</td>
 <td>false</td></tr>
-<tr class="b">
+<tr class="a">
 <td>org.apache.hadoop</td>
 <td>hadoop-hdfs</td>
 <td>3.4.0-SNAPSHOT</td>
@@ -684,7 +676,7 @@
 <td></td>
 <td>jar</td>
 <td>false</td></tr>
-<tr class="a">
+<tr class="b">
 <td>org.apache.hadoop</td>
 <td>hadoop-hdfs-client</td>
 <td>3.4.0-SNAPSHOT</td>
@@ -692,7 +684,7 @@
 <td></td>
 <td>jar</td>
 <td>false</td></tr>
-<tr class="b">
+<tr class="a">
 <td>junit</td>
 <td>junit</td>
 <td>4.13.2</td>
@@ -700,7 +692,7 @@
 <td></td>
 <td>jar</td>
 <td>false</td></tr>
-<tr class="a">
+<tr class="b">
 <td>org.apache.hadoop.thirdparty</td>
 <td>hadoop-shaded-guava</td>
 <td>1.1.1</td>
@@ -708,7 +700,7 @@
 <td></td>
 <td>jar</td>
 <td>false</td></tr>
-<tr class="b">
+<tr class="a">
 <td>commons-cli</td>
 <td>commons-cli</td>
 <td>1.5.0</td>
@@ -718,7 +710,7 @@
 <td>false</td></tr></table><hr /></section><section>
 <h3><a name="Used_but_undeclared_dependencies"></a>Used but undeclared dependencies</h3>
 <table border="0" class="bodyTable">
-<tr class="a">
+<tr class="b">
 <td><b>GroupId</b></td>
 <td><b>ArtifactId</b></td>
 <td><b>Version</b></td>
@@ -726,7 +718,7 @@
 <td><b>Classifier</b></td>
 <td><b>Type</b></td>
 <td><b>Optional</b></td></tr>
-<tr class="b">
+<tr class="a">
 <td>org.eclipse.jetty</td>
 <td>jetty-server</td>
 <td>9.4.51.v20230217</td>
@@ -734,10 +726,18 @@
 <td></td>
 <td>jar</td>
 <td>false</td></tr>
-<tr class="a">
+<tr class="b">
 <td>org.apache.hadoop</td>
 <td>hadoop-yarn-client</td>
 <td>3.4.0-SNAPSHOT</td>
+<td>compile</td>
+<td></td>
+<td>jar</td>
+<td>false</td></tr>
+<tr class="a">
+<td>log4j</td>
+<td>log4j</td>
+<td>1.2.17</td>
 <td>compile</td>
 <td></td>
 <td>jar</td>
@@ -802,7 +802,7 @@
 <td>org.apache.commons</td>
 <td>commons-lang3</td>
 <td>3.12.0</td>
-<td>compile</td>
+<td>provided</td>
 <td></td>
 <td>jar</td>
 <td>false</td></tr>
@@ -831,14 +831,6 @@
 <td>jar</td>
 <td>false</td></tr>
 <tr class="a">
-<td>org.apache.hadoop</td>
-<td>hadoop-logging</td>
-<td>3.4.0-SNAPSHOT</td>
-<td>compile</td>
-<td></td>
-<td>jar</td>
-<td>false</td></tr>
-<tr class="b">
 <td>javax.servlet</td>
 <td>javax.servlet-api</td>
 <td>3.1.0</td>
@@ -846,7 +838,7 @@
 <td></td>
 <td>jar</td>
 <td>false</td></tr>
-<tr class="a">
+<tr class="b">
 <td>com.fasterxml.jackson.core</td>
 <td>jackson-databind</td>
 <td>2.12.7.1</td>
@@ -856,7 +848,7 @@
 <td>false</td></tr></table><hr /></section><section>
 <h3><a name="Unused_but_declared_dependencies"></a>Unused but declared dependencies</h3>
 <table border="0" class="bodyTable">
-<tr class="b">
+<tr class="a">
 <td><b>GroupId</b></td>
 <td><b>ArtifactId</b></td>
 <td><b>Version</b></td>
@@ -864,7 +856,7 @@
 <td><b>Classifier</b></td>
 <td><b>Type</b></td>
 <td><b>Optional</b></td></tr>
-<tr class="a">
+<tr class="b">
 <td>org.apache.hadoop</td>
 <td>hadoop-yarn-server-timelineservice</td>
 <td>3.4.0-SNAPSHOT</td>
@@ -872,7 +864,7 @@
 <td>tests</td>
 <td>test-jar</td>
 <td>false</td></tr>
-<tr class="b">
+<tr class="a">
 <td>org.bouncycastle</td>
 <td>bcprov-jdk15on</td>
 <td>1.68</td>
@@ -880,7 +872,7 @@
 <td></td>
 <td>jar</td>
 <td>false</td></tr>
-<tr class="a">
+<tr class="b">
 <td>org.bouncycastle</td>
 <td>bcpkix-jdk15on</td>
 <td>1.68</td>
@@ -888,7 +880,7 @@
 <td></td>
 <td>jar</td>
 <td>false</td></tr>
-<tr class="b">
+<tr class="a">
 <td>com.google.protobuf</td>
 <td>protobuf-java</td>
 <td>2.5.0</td>
@@ -896,7 +888,7 @@
 <td></td>
 <td>jar</td>
 <td>false</td></tr>
-<tr class="a">
+<tr class="b">
 <td>org.slf4j</td>
 <td>slf4j-log4j12</td>
 <td>1.7.30</td>
@@ -904,7 +896,7 @@
 <td></td>
 <td>jar</td>
 <td>false</td></tr>
-<tr class="b">
+<tr class="a">
 <td>com.google.inject.extensions</td>
 <td>guice-servlet</td>
 <td>4.2.3</td>
@@ -912,7 +904,7 @@
 <td></td>
 <td>jar</td>
 <td>false</td></tr>
-<tr class="a">
+<tr class="b">
 <td>io.netty</td>
 <td>netty-all</td>
 <td>4.1.89.Final</td>
@@ -920,7 +912,7 @@
 <td></td>
 <td>jar</td>
 <td>false</td></tr>
-<tr class="b">
+<tr class="a">
 <td>commons-codec</td>
 <td>commons-codec</td>
 <td>1.15</td>
@@ -928,7 +920,7 @@
 <td></td>
 <td>jar</td>
 <td>false</td></tr>
-<tr class="a">
+<tr class="b">
 <td>commons-collections</td>
 <td>commons-collections</td>
 <td>3.2.2</td>
@@ -936,7 +928,7 @@
 <td></td>
 <td>jar</td>
 <td>false</td></tr>
-<tr class="b">
+<tr class="a">
 <td>com.sun.jersey.jersey-test-framework</td>
 <td>jersey-test-framework-grizzly2</td>
 <td>1.19.4</td>
