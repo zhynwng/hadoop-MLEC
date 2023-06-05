@@ -571,6 +571,7 @@
 <li><a href="#Get_Server_Defaults">Get Server Defaults</a></li>
 <li><a href="#Get_Link_Target">Get Link Target</a></li>
 <li><a href="#Get_File_Link_Status">Get File Link Status</a></li>
+<li><a href="#Get_EC_Policies">Get EC Policies</a></li>
 <li><a href="#Get_Status">Get Status</a></li></ul></li>
 <li><a href="#Storage_Policy_Operations">Storage Policy Operations</a>
 <ul>
@@ -661,7 +662,8 @@
 <ul>
 <li><a href="#BlockLocation_Properties">BlockLocation Properties</a></li></ul></li>
 <li><a href="#Server_Defaults_JSON_Schema">Server Defaults JSON Schema</a></li>
-<li><a href="#FsStatus_JSON_Schema">FsStatus JSON Schema</a></li></ul></li>
+<li><a href="#FsStatus_JSON_Schema">FsStatus JSON Schema</a></li>
+<li><a href="#EC_Policies_JSON_Schema">EC Policies JSON Schema</a></li></ul></li>
 <li><a href="#HTTP_Query_Parameter_Dictionary">HTTP Query Parameter Dictionary</a>
 <ul>
 <li><a href="#ACL_Spec">ACL Spec</a></li>
@@ -760,6 +762,7 @@
 <li><a href="#Get_Link_Target"><code>GETLINKTARGET</code></a> (see <a href="../../api/org/apache/hadoop/fs/FileSystem.html">FileSystem</a>.getLinkTarget)</li>
 <li><a href="#Get_File_Link_Status"><code>GETFILELINKSTATUS</code></a> (see <a href="../../api/org/apache/hadoop/fs/FileSystem.html">FileSystem</a>.getFileLinkStatus)</li>
 <li><a href="#Get_Status"><code>GETSTATUS</code></a> (see <a href="../../api/org/apache/hadoop/fs/FileSystem.html">FileSystem</a>.getStatus)</li>
+<li><a href="#Get_EC_Policies"><code>GETECPOLICIES</code></a></li>
 </ul>
 </li>
 <li>HTTP PUT
@@ -2308,6 +2311,52 @@ Transfer-Encoding: chunked
 </pre></div></div>
 
 <p>See also: <a href="../../api/org/apache/hadoop/fs/FileSystem.html">FileSystem</a>.getFileLinkInfo</p></section><section>
+<h3><a name="Get_EC_Policies"></a>Get EC Policies</h3>
+<ul>
+
+<li>Submit a HTTP GET request.
+
+<div class="source">
+<div class="source">
+<pre>curl -i &quot;http://&lt;HOST&gt;:&lt;PORT&gt;/webhdfs/v1/&lt;PATH&gt;?op=GETECPOLICIES&quot;
+</pre></div></div>
+</li>
+</ul>
+<p>The client receives a response with a <a href="#EC_Policies_JSON_Schema"><code>ECPolicies</code> JSON object</a>:</p>
+
+<div class="source">
+<div class="source">
+<pre>    HTTP/1.1 200 OK
+    Content-Type: application/json
+    Transfer-Encoding: chunked
+
+    {
+      &quot;ErasureCodingPolicies&quot;: {
+        &quot;ErasureCodingPolicyInfo&quot;: [
+          {
+            &quot;state&quot;: &quot;ENABLED&quot;,
+            &quot;policy&quot;: {
+              &quot;name&quot;: &quot;RS-6-3-1024k&quot;,
+              &quot;schema&quot;: {
+                &quot;codecName&quot;: &quot;rs&quot;,
+                &quot;numDataUnits&quot;: 6,
+                &quot;numParityUnits&quot;: 3,
+                &quot;extraOptions&quot;: {}
+              },
+              &quot;cellSize&quot;: 1048576,
+              &quot;id&quot;: 1,
+              &quot;replicationPolicy&quot;: false,
+              &quot;codecName&quot;: &quot;rs&quot;,
+              &quot;numDataUnits&quot;: 6,
+              &quot;numParityUnits&quot;: 3,
+              &quot;systemPolicy&quot;: true
+            }
+          }
+        ]
+      }
+    }
+</pre></div></div>
+</section><section>
 <h3><a name="Get_Status"></a>Get Status</h3>
 <ul>
 
@@ -4518,6 +4567,37 @@ Transfer-Encoding: chunked
     &quot;used&quot;: 29229154304,
     &quot;remaining&quot;: 292893392896,
     &quot;capacity&quot;: 322122547200
+  }
+}
+</pre></div></div>
+</section><section>
+<h3><a name="EC_Policies_JSON_Schema"></a>EC Policies JSON Schema</h3>
+
+<div class="source">
+<div class="source">
+<pre>{
+  &quot;ErasureCodingPolicies&quot;: {
+    &quot;ErasureCodingPolicyInfo&quot;: [
+      {
+        &quot;state&quot;: &quot;ENABLED&quot;,
+        &quot;policy&quot;: {
+          &quot;name&quot;: &quot;RS-6-3-1024k&quot;,
+          &quot;schema&quot;: {
+            &quot;codecName&quot;: &quot;rs&quot;,
+            &quot;numDataUnits&quot;: 6,
+            &quot;numParityUnits&quot;: 3,
+            &quot;extraOptions&quot;: {}
+          },
+          &quot;cellSize&quot;: 1048576,
+          &quot;id&quot;: 1,
+          &quot;replicationPolicy&quot;: false,
+          &quot;codecName&quot;: &quot;rs&quot;,
+          &quot;numDataUnits&quot;: 6,
+          &quot;numParityUnits&quot;: 3,
+          &quot;systemPolicy&quot;: true
+        }
+      }
+    ]
   }
 }
 </pre></div></div>
