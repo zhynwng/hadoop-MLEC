@@ -583,17 +583,7 @@
 <section>
 <h2><a name="Compatibility"></a><a name="compatibility"></a> Compatibility</h2><section>
 <h3><a name="Directory_Marker_Compatibility"></a><a name="directory-marker-compatibility"></a> Directory Marker Compatibility</h3>
-<ol style="list-style-type: decimal">
-
-<li>
-
-<p>This release can safely list/index/read S3 buckets where &#x201c;empty directory&#x201d; markers are retained.</p>
-</li>
-<li>
-
-<p>This release can be configured to retain these directory makers at the expense of being backwards incompatible.</p>
-</li>
-</ol>
+<p>This release does not delete directory markers when creating files or directories underneath. This is incompatible with versions of the Hadoop S3A client released before 2021.</p>
 <p>Consult <a href="directory_markers.html">Controlling the S3A Directory Marker Behavior</a> for full details.</p></section></section><section>
 <h2><a name="Documents"></a><a name="documents"></a> Documents</h2>
 <ul>
