@@ -38,7 +38,7 @@ tar --bzip2 -xf boost_1_72_0.tar.bz2 && cd boost_1_72_0
 sudo ./b2 --without-python install
 
 #------------------------------Build from source--------------------------------
-# Build tar
+# Build tar (need to run separately)
 sudo mvn package -Pdist -DskipTests -Dtar -Dmaven.javadoc.skip=true
 
 # Run tests on HDFS
@@ -50,12 +50,12 @@ sudo apt-get install ssh
 sudo apt-get install pdsh
 
 # Copy and unpack Hadoop built from source
-# cd 
-# cp hadoop-MLEC/hadoop-dist/target/hadoop-3.3.5.tar.gz ~
-# tar xzf hadoop-3.3.5.tar.gz
-# rm hadoop-3.3.5.tar.gz
-# mv hadoop-3.3.5 hadoop
-# echo "JAVA_HOME=/usr/lib/jvm/java-1.8.0-openjdk-amd64" >> hadoop/etc/hadoop/hadoop-env.sh 
+cd 
+cp hadoop-MLEC/hadoop-dist/target/hadoop-3.3.5.tar.gz ~
+tar xzf hadoop-3.3.5.tar.gz
+rm hadoop-3.3.5.tar.gz
+mv hadoop-3.3.5 hadoop
+echo "JAVA_HOME=/usr/lib/jvm/java-1.8.0-openjdk-amd64" >> hadoop/etc/hadoop/hadoop-env.sh 
 
 # Standalone operation 
 # mkdir input
@@ -69,3 +69,4 @@ ssh-keygen -t rsa -P '' -f ~/.ssh/id_rsa
 cat ~/.ssh/id_rsa.pub >> ~/.ssh/authorized_keys
 chmod 0600 ~/.ssh/authorized_keys
 export PDSH_RCMD_TYPE=ssh
+#sudo chown cc:cc -R /zpool
